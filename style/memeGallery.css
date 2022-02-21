@@ -1,0 +1,101 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 240px));
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+    gap: 10px;
+    padding: 30px;
+    width: auto;
+    margin: 0 auto;
+    background: #1f2424;
+    opacity: 1;
+    margin-bottom: 80px;
+}
+
+img {
+    width: 100%;
+}
+
+.meme {
+    cursor: pointer;
+    width: 210px;
+    height: 210px;
+    padding: 10px;
+}
+
+.search {
+    align-items: center;
+    display: flex;
+    padding: 10px 28px;
+}
+
+.search-input {
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.search-button {
+    border-radius: 6px;
+    height: 37px;
+    width: 35px;
+    background-color: #9cc7ad;
+    border: none;
+}
+
+.text-input {
+    padding: 15px;
+    height: 24px;
+    width: 310px;
+    border-radius: 50px;
+    font-size: 21px;
+    margin-top: 10px;
+}
+
+.clear-button {
+    height: 50px;
+    width: 60px;
+}
+
+.keywords{
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    margin-left: 10px;
+    flex-direction: row;
+    cursor: pointer;
+    color: white;
+    font-size: 40px;
+    font-family: fantasy;
+    align-items: center;
+}
+
+@media (max-width: 880px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
+    }
+
+    .keywords {
+        display: grid;
+    }
+
+    .meme {
+        width: 160px;
+        height: 160px;
+        padding: 0 10px;
+    }
+}
+
+.keyWord {
+    margin-right: 30px;
+}
+
+.keywords-section {
+    align-items: center;
+    display: flex;
+    margin-right: 30px;
+}
+
+.keywords-selection {
+    border-radius: 5px;
+    height: 30px;
+    cursor: pointer;
+}

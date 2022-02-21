@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/memeGallery.css">
+    <link rel="stylesheet" href="style/text-editor.css">
+    <title>Meme Generator</title>
+</head>
+
+<body onload="init()">
+    <header>
+        <div class="header-container">
+            <div class="logo">Memegen</div>
+            <nav class="nav-container">
+                <ul class="list">
+                    <li class="list-item" onclick="closeSection()">Gallery</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+        <section class="search">
+            <input class="search-input" type="search" name="search" id="Meme">
+            <button class="search-button">
+                <img src="ICONS/search-icon.png" onclick="onSearchClick()">
+            </button>
+            <div class="keywords">
+                <div class="keyWord" onclick="onFilterClick('all')">All</div>
+                <section class="keywords-section">
+                    <select class="keywords-selection"
+                        onchange="onFilterClick(this.value)">
+                    </select>
+                </section>
+                <div class="keyWord" onclick="onFilterClick('funny')">funny</div>
+                <div class="keyWord" onclick="onFilterClick('thinking')">thinking</div>
+                <div class="keyWord" onclick="onFilterClick('life')">life</div>
+            </div>
+        </section>
+        <div class="section">
+            <div class="section-container">
+                <canvas id="my-canvas" height="500" width="500"></canvas>
+                <div class="text-editor">
+                    <input class="text-input" id="input-text" placeholder="Write Your Text Here..."></input>
+                    <div class="text-lines-actions">
+                        <div class="text-lines-actions-upper-container">
+                            <button>
+                                <img src="ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
+                                    onclick="onTextEditorAction('nextLine')">
+                            </button>
+                            <button>
+                                <img src="ICONS/add.png" onclick="onTextEditorAction('addTextLine')">
+                            </button>
+                            <button>
+                                <img src="ICONS/trash.png" onclick="onTextEditorAction('deleteTextLine')">
+                            </button>
+                        </div>
+                        <div class="text-lines-actions-bottom-container">
+                            <button>
+                                <img src="ICONS/arrow-up.png" onclick="onTextEditorAction('moveLine', false)">
+                            </button>
+                            <button>
+                                <img class="arrow-down" src="ICONS/arrow-up.png"
+                                    onclick="onTextEditorAction('moveLine', true)">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="font-actions">
+                        <div class="upper-section">
+                            <button class="font-size-button" onclick="onTextEditorAction('changeFontSize', true)">
+                                <img src="ICONS/increase-font-icon.png">
+                            </button>
+                            <button class="font-size-button" onclick="onTextEditorAction('changeFontSize', false)">
+                                <img src="ICONS/decrease-font-icon.png">
+                            </button>
+                            <button onclick="onTextEditorAction('alignText', 1)">
+                                <img src="ICONS/align-to-left.png">
+                            </button>
+                            <button onclick="onTextEditorAction('alignText', 2)">
+                                <img src="ICONS/center-text-alignment.png">
+                            </button>
+                            <button onclick="onTextEditorAction('alignText', 3)">
+                                <img src="ICONS/align-to-right.png">
+                            </button>
+                        </div>
+                        <div class="bottom-section">
+                            <section>
+                                <select class="fonts-filter-selection"
+                                    onchange="onTextEditorAction('setFont', this.value)">
+                                </select>
+                            </section>
+                            <button class="font-size-button" onclick="onTextEditorAction('updateStrokeText')">
+                                <img src="ICONS/text-stroke.png">
+                            </button>
+                            <input type="color" id="input-color"></input>
+                        </div>
+                    </div>
+                    <a href="#" class="download" onclick="downloadCanvas(this)" download="">Download Meme</a>
+                </div>
+            </div>
+        </div>
+        <section class="grid-container"></section>
+        <footer class="main-footer">
+            <div class="footer-logo">Memegen</div>
+            <p>© All Rights Reserved 2021</p>
+        </footer>
+
+    </body>
+
+    <script src="js/memeService.js"></script>
+    <script src="utils/meme.utils.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="js/memeController.js"></script>
+</body>
+
+</html>
